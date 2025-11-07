@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Okul tanıtım sitesi - Modern eğitim için doğru adres">
+    <title>Ad Soyad Yaz-Sema Cengiz Büberci Kız MTAL</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+// Sağ tıklamayı engelle
+    document.addEventListener("contextmenu", function(e) {
+    e.preventDefault();
+    //alert("Sağ tıklama devre dışı bırakılmıştır!");
+});
+</script>
+<script>
+// Sağ tıklamayı engelle
+document.addEventListener("contextmenu", e => e.preventDefault());
+
+// Kopyalama ve kesmeyi engelle
+document.addEventListener("copy", e => e.preventDefault());
+document.addEventListener("cut", e => e.preventDefault());
+
+// F12, Ctrl+Shift+I, Ctrl+U, Ctrl+S, Ctrl+Shift+C engelle
+document.onkeydown = function(e) {
+    if (
+        e.key === "F12" ||
+        (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "i") ||
+        (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "c") ||
+        (e.ctrlKey && e.key.toLowerCase() === "u") ||
+        (e.ctrlKey && e.key.toLowerCase() === "s")
+    ) {
+        e.preventDefault();
+        alert("Bu işlem devre dışı bırakılmıştır!");
+        return false;
+    }
+};
+
+// DevTools açık mı kontrol et (interval ile)
+setInterval(function() {
+    const threshold = 160;
+    if (
+        window.outerWidth - window.innerWidth > threshold ||
+        window.outerHeight - window.innerHeight > threshold
+    ) {
+        document.body.innerHTML = "<h2 style='text-align:center;color:red;margin-top:20%;'>Geliştirici araçlarını kapatın!</h2>";
+    }
+}, 1000);
+</script>
+</head>
+<body>
+    <!-- Ana Başlık Bölümü -->
+    <header>
+        <div class="container">
+            <a href="images/Okul_logo.png"><img src="images/Okul_logo.png" height="250px" alt=""></a>
+            <h1>Sema Cengiz Büberci Kız MTAL</h1>
+            <p class="subtitle">Geleceğin liderlerini yetiştiren, çağdaş eğitim kurumu</p>
+        </div>
+    </header>
+
+    <!-- Navigasyon 
+    <nav class="navigation">
+        <div class="container">
+            <ul>
+                <li><a href="#ana-sayfa">Ana Sayfa</a></li>
+                <li><a href="#hakkimizda">Hakkımızda</a></li>
+                <li><a href="#galeri">Galeri</a></li>
+                <li><a href="#iletisim">İletişim</a></li>
+            </ul>
+        </div>
+    </nav>-->
+
+    <!-- Ana İçerik Alanı -->
+    <main>
+        <!-- Hakkımızda Bölümü -->
+        <section id="hakkimizda" class="about-section">
+            <div class="container">
+                <h2>Okulumuz Hakkında</h2>
+                
+                <article>
+                    <h3>Misyonumuz</h3>
+                    <p>
+                        Okulumuz, öğrencilerimize en kaliteli eğitimi sunarak onları geleceğe hazırlamayı hedeflemektedir. 
+                        Modern eğitim teknikleri ve deneyimli öğretmen kadromuzla, her öğrencinin potansiyelini 
+                        ortaya çıkarmayı amaçlıyoruz.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>Vizyonumuz</h3>
+                    <p>
+                        Türkiye'nin önde gelen eğitim kurumlarından biri olmak ve öğrencilerimizi hem akademik 
+                        hem de sosyal açıdan donanımlı bireyler haline getirmek temel vizyonumuzdur.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>Neden Bizi Seçmelisiniz?</h3>
+                    <ul>
+                        <li><strong>Modern Eğitim Sistemi:</strong> Teknolojik altyapıyla desteklenen, çağdaş eğitim metotları</li>
+                        <li><strong>Deneyimli Öğretmen Kadrosu:</strong> Alanında uzman, sertifikalı eğitmenler</li>
+                        <li><strong>Geniş Bahçe ve Spor Alanları:</strong> Öğrencilerin fiziksel gelişimine katkı sağlayan alanlar</li>
+                        <li><strong>Laboratuvarlar:</strong> Fen bilimleri, bilgisayar ve dil laboratuvarları</li>
+                        <li><strong>Kültürel Etkinlikler:</strong> Zengin sosyal ve kültürel aktiviteler</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+
+        <!-- İletişim Formu Bölümü -->
+        <section id="iletisim" class="contact-section">
+            <div class="container">
+                <h2>Bize Ulaşın</h2>
+                <p>Sorularınız, görüş ve önerileriniz için bizimle iletişime geçebilirsiniz.</p>
+                
+                <form class="contact-form" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="ad-soyad">Adınız Soyadınız <span class="required">*</span></label>
+                        <input 
+                            type="text" 
+                            id="ad-soyad" 
+                            name="ad-soyad" 
+                            placeholder="Adınızı ve soyadınızı giriniz"
+                            required
+                        />
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">E-posta Adresiniz <span class="required">*</span></label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="ornek@email.com"
+                            required
+                        />
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="telefon">Telefon Numaranız</label>
+                        <input 
+                            type="tel" 
+                            id="telefon" 
+                            name="telefon" 
+                            placeholder="0 (5XX) XXX XX XX"
+                        />
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="konu">Konu</label>
+                        <select id="konu" name="konu">
+                            <option value="">Bir konu seçiniz</option>
+                            <option value="kayit">Kayıt İşlemleri</option>
+                            <option value="genel-bilgi">Genel Bilgi</option>
+                            <option value="etkinlik">Etkinlikler</option>
+                            <option value="diger">Diğer</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mesaj">Mesajınız <span class="required">*</span></label>
+                        <textarea 
+                            id="mesaj" 
+                            name="mesaj" 
+                            rows="5" 
+                            placeholder="Mesajınızı buraya yazabilirsiniz..."
+                            required
+                        ></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="submit-btn">Gönder</button>
+                        <button type="reset" class="reset-btn">Temizle</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Alt Bilgi -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sema Cengiz Büberci Kız MTAL. Tüm hakları saklıdır.</p>
+            <p>
+                <strong>Adres:</strong> İstasyon Mahallesi İstiklal Cad. No143 55060 İlkadım/SAMSUN<br>
+                <strong>Telefon:</strong> 0 362 233 12 17 | 
+                <strong>E-posta:</strong> info@mehmetkarahan.tr
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
